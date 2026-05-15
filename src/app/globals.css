@@ -4,6 +4,9 @@
 
 :root {
   --primary: #0ea47a;
+  --primary-dark: #0d8f6a;
+  --bg-dark: #0f172a;
+  --card-bg: #1e2937;
 }
 
 .dark {
@@ -11,10 +14,26 @@
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
+  background: rgba(30, 41, 55, 0.85);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(148, 163, 184, 0.15);
 }
 
-.dark .glass {
-  background: rgba(15, 23, 42, 0.8);
+.card-premium {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-premium:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.result-number {
+  font-variant-numeric: tabular-nums;
+}
+
+.trust-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
 }
