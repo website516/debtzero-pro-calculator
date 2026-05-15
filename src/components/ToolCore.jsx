@@ -5,7 +5,7 @@ import { useLocale } from '../hooks/useLocale';
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
-import { Plus, Trash2, Download, TrendingDown, Users, Calendar, Award } from 'lucide-react';
+import { Plus, Trash2, Download, TrendingDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function ToolCore() {
@@ -102,7 +102,6 @@ export default function ToolCore() {
     doc.save("debt-payoff-report.pdf");
   };
 
-  // Pie chart data
   const pieData = debts.map((debt, index) => ({
     name: debt.name,
     value: debt.balance,
@@ -110,69 +109,41 @@ export default function ToolCore() {
   }));
 
   return (
-    <div className="max-w-5xl mx-auto">
+    <div>
       <div className="flex justify-between items-center mb-8">
         <div>
-          <div className="text-emerald-400 text-sm font-semibold tracking-widest">你的債項清單</div>
+          <div className="text-emerald-400 text-sm font-semibold tracking-widest">YOUR DEBTS</div>
           <h3 className="text-3xl font-semibold text-white mt-1">輸入債務資料</h3>
         </div>
         <button 
           onClick={addDebt} 
-          className="flex items-center gap-3 px-6 py-3 bg-white/10 hover:bg-white/15 text-white rounded-2xl text-sm font-medium border border-white/20 transition"
+          className="flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/15 text-white rounded-2xl text-sm border border-white/20 transition"
         >
-          <Plus className="w-4 h-4" /> {t('addDebt')}
+          <Plus className="w-4 h-4" /> 新增債項
         </button>
       </div>
 
       <div className="space-y-4 mb-8">
-        {debts.map((debt, index) => (
-          <motion.div 
-            key={debt.id}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="grid grid-cols-12 gap-4 items-end bg-[#1e2937] p-6 rounded-3xl border border-white/10"
-          >
+        {debts.map((debt) => (
+          <div key={debt.id} className="grid grid-cols-12 gap-4 items-end bg-[#0a0f1a] p-5 rounded-2xl border border-white/10">
             <div className="col-span-12 md:col-span-3">
-              <label className="text-xs text-slate-400 mb-2 block">DEBT NAME</label>
-              <input 
-                type="text" 
-                value={debt.name} 
-                onChange={(e) => updateDebt(debt.id, 'name', e.target.value)}
-                className="w-full bg-[#0f172a] border border-white/20 rounded-2xl px-5 py-3.5 text-white focus:outline-none focus:border-emerald-500 transition" 
-              />
+              <label className="text-xs text-slate-400 mb-1.5 block">DEBT NAME</label>
+              <input type="text" value={debt.name} onChange={(e) => updateDebt(debt.id, 'name', e.target.value)} className="w-full bg-[#111827] border border-white/20 rounded-xl px-4 py-3 text-white" />
             </div>
             <div className="col-span-6 md:col-span-2">
-              <label className="text-xs text-slate-400 mb-2 block">BALANCE (HKD)</label>
-              <input 
-                type="number" 
-                value={debt.balance} 
-                onChange={(e) => updateDebt(debt.id, 'balance', e.target.value)}
-                className="w-full bg-[#0f172a] border border-white/20 rounded-2xl px-5 py-3.5 text-white focus:outline-none focus:border-emerald-500 transition" 
-              />
+              <label className="text-xs text-slate-400 mb-1.5 block">BALANCE (HKD)</label>
+              <input type="number" value={debt.balance} onChange={(e) => updateDebt(debt.id, 'balance', e.target.value)} className="w-full bg-[#111827] border border-white/20 rounded-xl px-4 py-3 text-white" />
             </div>
             <div className="col-span-6 md:col-span-2">
-              <label className="text-xs text-slate-400 mb-2 block">INTEREST RATE (%)</label>
-              <input 
-                type="number" 
-                value={debt.rate} 
-                onChange={(e) => updateDebt(debt.id, 'rate', e.target.value)}
-                className="w-full bg-[#0f172a] border border-white/20 rounded-2xl px-5 py-3.5 text-white focus:outline-none focus:border-emerald-500 transition" 
-              />
+              <label className="text-xs text-slate-400 mb-1.5 block">INTEREST RATE (%)</label>
+              <input type="number" value={debt.rate} onChange={(e) => updateDebt(debt.id, 'rate', e.target.value)} className="w-full bg-[#111827] border border-white/20 rounded-xl px-4 py-3 text-white" />
             </div>
             <div className="col-span-6 md:col-span-2">
-              <label className="text-xs text-slate-400 mb-2 block">MIN PAYMENT</label>
-              <input 
-                type="number" 
-                value={debt.minPayment} 
-                onChange={(e) => updateDebt(debt.id, 'minPayment', e.target.value)}
-                className="w-full bg-[#0f172a] border border-white/20 rounded-2xl px-5 py-3.5 text-white focus:outline-none focus:border-emerald-500 transition" 
-              />
+              <label className="text-xs text-slate-400 mb-1.5 block">MIN PAYMENT</label>
+              <input type="number" value={debt.minPayment} onChange={(e) => updateDebt(debt.id, 'minPayment', e.target.value)} className="w-full bg-[#111827] border border-white/20 rounded-xl px-4 py-3 text-white" />
             </div>
             <div className="col-span-6 md:col-span-3 flex justify-end">
-              <button 
-                onClick={() => removeDebt(debt.id)} 
-                className="p-4 text-red-400 hover:bg-red-950/50 rounded-2xl transition"
-              >
+              <button onClick={() => removeDebt(debt.id)} className="p-3 text-red-400 hover:bg-red-950/60 rounded-xl transition">
                 <Trash2 className="w-5 h-5" />
               </button>
             </div>
@@ -181,75 +152,47 @@ export default function ToolCore() {
       </div>
 
       <div className="flex flex-col md:flex-row gap-4 items-end mb-10">
-        <div className="flex-1 w-full">
-          <label className="text-sm font-medium text-slate-400 mb-3 block">{t('extraPayment')}</label>
+        <div className="flex-1">
+          <label className="text-sm text-slate-400 mb-2 block">EXTRA MONTHLY PAYMENT (HKD)</label>
           <div className="flex items-center gap-4">
-            <input 
-              type="range" 
-              min="0" 
-              max="15000" 
-              step="500"
-              value={extraPayment} 
-              onChange={(e) => setExtraPayment(Number(e.target.value))}
-              className="flex-1 accent-emerald-500" 
-            />
-            <div className="w-36 text-right">
-              <div className="text-3xl font-semibold text-emerald-400 tabular-nums">HK${extraPayment.toLocaleString()}</div>
-              <div className="text-xs text-slate-500">PER MONTH</div>
+            <input type="range" min="0" max="15000" step="500" value={extraPayment} onChange={(e) => setExtraPayment(Number(e.target.value))} className="flex-1 accent-emerald-500" />
+            <div className="w-40 text-right">
+              <div className="text-3xl font-semibold text-emerald-400">HK${extraPayment.toLocaleString()}</div>
             </div>
           </div>
         </div>
 
-        <button 
-          onClick={calculatePayoff} 
-          disabled={isCalculating}
-          className="w-full md:w-auto px-16 py-4 bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-600 text-white font-semibold rounded-2xl text-lg flex items-center justify-center gap-3 transition shadow-lg shadow-emerald-500/30"
-        >
-          {isCalculating ? 'Calculating...' : t('calculate')}
+        <button onClick={calculatePayoff} disabled={isCalculating} className="px-14 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-2xl flex items-center gap-3 transition">
+          {isCalculating ? '計算中...' : '計算還款計劃'}
           <TrendingDown className="w-5 h-5" />
         </button>
       </div>
 
       {results && (
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="space-y-8"
-        >
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="glass rounded-3xl p-9 border border-emerald-500/30">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="px-4 py-1 bg-emerald-900/40 text-emerald-400 text-xs font-semibold rounded-full">SNOWBALL</div>
-              </div>
-              <div className="text-6xl font-semibold text-white tabular-nums result-number">{results.snowball.months}</div>
-              <div className="text-slate-400 mt-1">months to debt-free</div>
-              
-              <div className="mt-8 pt-8 border-t border-white/10 text-sm">
-                Total Interest: <span className="font-mono text-lg text-white">HK${results.snowball.totalInterest.toLocaleString()}</span>
-              </div>
+            <div className="bg-[#0a0f1a] rounded-3xl p-8 border border-emerald-500/30">
+              <div className="text-emerald-400 text-sm mb-2">SNOWBALL METHOD</div>
+              <div className="text-6xl font-semibold text-white tabular-nums">{results.snowball.months}</div>
+              <div className="text-slate-400">個月還清</div>
+              <div className="mt-6 text-sm">總利息： <span className="font-mono text-xl text-white">HK${results.snowball.totalInterest.toLocaleString()}</span></div>
             </div>
-
-            <div className="glass rounded-3xl p-9 border border-blue-500/30">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="px-4 py-1 bg-blue-900/40 text-blue-400 text-xs font-semibold rounded-full">AVALANCHE</div>
-              </div>
-              <div className="text-6xl font-semibold text-white tabular-nums result-number">{results.avalanche.months}</div>
-              <div className="text-slate-400 mt-1">months to debt-free</div>
-              
-              <div className="mt-8 pt-8 border-t border-white/10 text-sm">
-                Total Interest: <span className="font-mono text-lg text-white">HK${results.avalanche.totalInterest.toLocaleString()}</span>
-              </div>
+            <div className="bg-[#0a0f1a] rounded-3xl p-8 border border-blue-500/30">
+              <div className="text-blue-400 text-sm mb-2">AVALANCHE METHOD</div>
+              <div className="text-6xl font-semibold text-white tabular-nums">{results.avalanche.months}</div>
+              <div className="text-slate-400">個月還清</div>
+              <div className="mt-6 text-sm">總利息： <span className="font-mono text-xl text-white">HK${results.avalanche.totalInterest.toLocaleString()}</span></div>
             </div>
           </div>
 
-          <div className="glass rounded-3xl p-9">
-            <div className="flex justify-between items-center mb-6">
+          <div className="bg-[#0a0f1a] rounded-3xl p-8">
+            <div className="flex justify-between mb-6">
               <div>
-                <div className="font-semibold text-lg text-white">Debt Balance Over Time</div>
-                <div className="text-sm text-slate-400">Lower line = faster payoff</div>
+                <div className="font-semibold text-white">債務餘額變化曲線</div>
+                <div className="text-sm text-slate-400">越低越快清零</div>
               </div>
-              <button onClick={downloadPDF} className="flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300 transition">
-                <Download className="w-4 h-4" /> Download PDF
+              <button onClick={downloadPDF} className="text-emerald-400 flex items-center gap-2 text-sm">
+                <Download className="w-4 h-4" /> 下載 PDF
               </button>
             </div>
             <div className="h-80">
@@ -257,49 +200,12 @@ export default function ToolCore() {
                 <LineChart data={results.snowball.history}>
                   <XAxis dataKey="month" stroke="#64748b" />
                   <YAxis stroke="#64748b" />
-                  <Tooltip contentStyle={{ backgroundColor: '#1e2937', border: 'none', borderRadius: '8px' }} />
+                  <Tooltip />
                   <Legend />
-                  <Line type="monotone" dataKey="totalBalance" stroke="#10b981" strokeWidth={3} name="Snowball" />
-                  <Line type="monotone" dataKey="totalBalance" stroke="#3b82f6" strokeWidth={3} strokeDasharray="4 2" name="Avalanche" />
+                  <Line type="monotone" dataKey="totalBalance" stroke="#10b981" strokeWidth={3} name="雪球法" />
+                  <Line type="monotone" dataKey="totalBalance" stroke="#3b82f6" strokeWidth={3} strokeDasharray="4 2" name="雪崩法" />
                 </LineChart>
               </ResponsiveContainer>
-            </div>
-          </div>
-
-          {/* Pie Chart for Debt Breakdown */}
-          <div className="glass rounded-3xl p-9">
-            <div className="font-semibold text-lg text-white mb-6">Your Debt Breakdown</div>
-            <div className="flex flex-col lg:flex-row gap-8 items-center">
-              <div className="w-full lg:w-1/2 h-72">
-                <ResponsiveContainer width="100%" height="100%">
-                  <PieChart>
-                    <Pie
-                      data={pieData}
-                      cx="50%"
-                      cy="50%"
-                      innerRadius={70}
-                      outerRadius={110}
-                      dataKey="value"
-                    >
-                      {pieData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.fill} />
-                      ))}
-                    </Pie>
-                    <Tooltip />
-                  </PieChart>
-                </ResponsiveContainer>
-              </div>
-              <div className="flex-1 space-y-4">
-                {debts.map((debt, index) => (
-                  <div key={index} className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-4 h-4 rounded-full" style={{ backgroundColor: pieData[index]?.fill }}></div>
-                      <span>{debt.name}</span>
-                    </div>
-                    <div className="font-mono text-emerald-400">HK${debt.balance.toLocaleString()}</div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </motion.div>
