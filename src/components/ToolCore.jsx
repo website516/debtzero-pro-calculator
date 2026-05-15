@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { useLocale } from '../hooks/useLocale';
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';

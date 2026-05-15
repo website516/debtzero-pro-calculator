@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { useLocale } from '../hooks/useLocale';
 import { useTheme } from '../hooks/useTheme';

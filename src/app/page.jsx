@@ -1,3 +1,5 @@
+'use client';
+
 import SEO from '../components/SEO';
 import ToolCore from '../components/ToolCore';
 import AdSlot from '../components/AdSlot';
