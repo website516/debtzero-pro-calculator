@@ -109,7 +109,7 @@ export default function ToolCore() {
   }));
 
   return (
-    <div>
+    <div className="max-w-5xl mx-auto">
       <div className="flex justify-between items-center mb-8">
         <div>
           <div className="text-emerald-400 text-sm font-semibold tracking-widest">YOUR DEBTS</div>
@@ -147,7 +147,7 @@ export default function ToolCore() {
                 <Trash2 className="w-5 h-5" />
               </button>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
 
