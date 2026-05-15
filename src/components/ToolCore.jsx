@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import { useLocale } from '../hooks/useLocale';
-import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
-import { Plus, Trash2, Download, TrendingDown } from 'lucide-react';
+import { Plus, Trash2, Download, TrendingDown, Users, Calendar, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function ToolCore() {
@@ -101,6 +101,13 @@ export default function ToolCore() {
     doc.text(`雪崩法: ${results.avalanche.months} 個月 | 利息 HK$${results.avalanche.totalInterest.toLocaleString()}`, 20, 61);
     doc.save("debt-payoff-report.pdf");
   };
+
+  // Pie chart data
+  const pieData = debts.map((debt, index) => ({
+    name: debt.name,
+    value: debt.balance,
+    fill: ['#10b981', '#3b82f6', '#8b5cf6', '#f59e0b'][index % 4]
+  }));
 
   return (
     <div className="max-w-5xl mx-auto">
@@ -256,6 +263,43 @@ export default function ToolCore() {
                   <Line type="monotone" dataKey="totalBalance" stroke="#3b82f6" strokeWidth={3} strokeDasharray="4 2" name="Avalanche" />
                 </LineChart>
               </ResponsiveContainer>
+            </div>
+          </div>
+
+          {/* Pie Chart for Debt Breakdown */}
+          <div className="glass rounded-3xl p-9">
+            <div className="font-semibold text-lg text-white mb-6">Your Debt Breakdown</div>
+            <div className="flex flex-col lg:flex-row gap-8 items-center">
+              <div className="w-full lg:w-1/2 h-72">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={pieData}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={70}
+                      outerRadius={110}
+                      dataKey="value"
+                    >
+                      {pieData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.fill} />
+                      ))}
+                    </Pie>
+                    <Tooltip />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+              <div className="flex-1 space-y-4">
+                {debts.map((debt, index) => (
+                  <div key={index} className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-4 h-4 rounded-full" style={{ backgroundColor: pieData[index]?.fill }}></div>
+                      <span>{debt.name}</span>
+                    </div>
+                    <div className="font-mono text-emerald-400">HK${debt.balance.toLocaleString()}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>
