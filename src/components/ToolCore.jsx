@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useLocale } from '../hooks/useLocale';
-import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import { Plus, Trash2, Download, TrendingDown } from 'lucide-react';
@@ -102,12 +102,6 @@ export default function ToolCore() {
     doc.save("debt-payoff-report.pdf");
   };
 
-  const pieData = debts.map((debt, index) => ({
-    name: debt.name,
-    value: debt.balance,
-    fill: ['#10b981', '#3b82f6', '#8b5cf6', '#f59e0b'][index % 4]
-  }));
-
   return (
     <div className="max-w-5xl mx-auto">
       <div className="flex justify-between items-center mb-8">
@@ -174,25 +168,25 @@ export default function ToolCore() {
             <div className="bg-[#0a0f1a] rounded-3xl p-8 border border-emerald-500/30">
               <div className="text-emerald-400 text-sm mb-2">SNOWBALL METHOD</div>
               <div className="text-6xl font-semibold text-white tabular-nums">{results.snowball.months}</div>
-              <div className="text-slate-400">個月還清</div>
-              <div className="mt-6 text-sm">總利息： <span className="font-mono text-xl text-white">HK${results.snowball.totalInterest.toLocaleString()}</span></div>
+              <div className="text-slate-400">months to debt-free</div>
+              <div className="mt-6 text-sm">Total Interest: <span className="font-mono text-xl text-white">HK${results.snowball.totalInterest.toLocaleString()}</span></div>
             </div>
             <div className="bg-[#0a0f1a] rounded-3xl p-8 border border-blue-500/30">
               <div className="text-blue-400 text-sm mb-2">AVALANCHE METHOD</div>
               <div className="text-6xl font-semibold text-white tabular-nums">{results.avalanche.months}</div>
-              <div className="text-slate-400">個月還清</div>
-              <div className="mt-6 text-sm">總利息： <span className="font-mono text-xl text-white">HK${results.avalanche.totalInterest.toLocaleString()}</span></div>
+              <div className="text-slate-400">months to debt-free</div>
+              <div className="mt-6 text-sm">Total Interest: <span className="font-mono text-xl text-white">HK${results.avalanche.totalInterest.toLocaleString()}</span></div>
             </div>
           </div>
 
           <div className="bg-[#0a0f1a] rounded-3xl p-8">
             <div className="flex justify-between mb-6">
               <div>
-                <div className="font-semibold text-white">債務餘額變化曲線</div>
-                <div className="text-sm text-slate-400">越低越快清零</div>
+                <div className="font-semibold text-white">Debt Balance Over Time</div>
+                <div className="text-sm text-slate-400">Lower line = faster payoff</div>
               </div>
               <button onClick={downloadPDF} className="text-emerald-400 flex items-center gap-2 text-sm">
-                <Download className="w-4 h-4" /> 下載 PDF
+                <Download className="w-4 h-4" /> Download PDF
               </button>
             </div>
             <div className="h-80">
@@ -202,8 +196,8 @@ export default function ToolCore() {
                   <YAxis stroke="#64748b" />
                   <Tooltip />
                   <Legend />
-                  <Line type="monotone" dataKey="totalBalance" stroke="#10b981" strokeWidth={3} name="雪球法" />
-                  <Line type="monotone" dataKey="totalBalance" stroke="#3b82f6" strokeWidth={3} strokeDasharray="4 2" name="雪崩法" />
+                  <Line type="monotone" dataKey="totalBalance" stroke="#10b981" strokeWidth={3} name="Snowball" />
+                  <Line type="monotone" dataKey="totalBalance" stroke="#3b82f6" strokeWidth={3} strokeDasharray="4 2" name="Avalanche" />
                 </LineChart>
               </ResponsiveContainer>
             </div>
