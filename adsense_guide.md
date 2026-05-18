@@ -1,17 +1,13 @@
-# AdSense 合規指南 (DebtZero Pro 專用)
+# AdSense Guide for DebtZero Pro
 
-## 最佳廣告位置
-- 工具結果下方 (300x250)
-- 教育內容中間
-- Sidebar (desktop)
+## Recommended Ad Placements
+- After the calculator results
+- In the educational explanation section
+- Avoid placing ads inside the input form area
 
-## 填寫合規頁面變數
-- 隱私政策中的 support@debtzero.pro 請替換為你的電郵
-- About 頁的作者資訊請更新為你的真實資訊
+## Compliance Notes
+- All calculations happen client-side
+- No personal data is collected
+- Clear disclaimer is present
 
-## 通過率提升建議
-- 每週更新 1-2 篇長文 (800+ 字)
-- 添加 FAQ 結構化數據
-- 保持移動端友好
-
-此網站已符合 2026 年所有基本要求，可以直接申請。
+Update contact email and About page with real information before submitting for AdSense review.

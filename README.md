@@ -1,33 +1,20 @@
-# DebtZero Pro – 香港最強債務清零計算器
+# DebtZero Pro
 
-**Next.js + Tailwind + AdSense 完全合規版本**
+Professional static debt payoff calculator for Hong Kong users.
 
-已包含所有 Google AdSense 2026 審核所需項目：
-- Privacy / About / Contact / Terms / Disclaimer 完整頁面
-- 雙語 (EN / 繁體中文)
-- 深色模式 + PWA
-- 多個合規 AdSlot
-- 高質量教育內容 (符合 YMYL 要求)
+**Decision Summary Applied:**
+- Focused on Immediate Action + Education
+- Professional, data-driven tone
+- Transparent assumptions near the tool
+- Natural Hong Kong context
 
-## 快速開始
+## How to Deploy
+1. Upload all files to Netlify (drag & drop)
+2. Or connect this GitHub repo
 
-```bash
-npm install
-npm run dev
-```
+## Tech Stack
+- Pure HTML + Tailwind via CDN
+- Vanilla JavaScript
+- Chart.js (used once for balance chart)
 
-## 部署到 Netlify / Vercel
-
-1. 推送到 GitHub
-2. 新建 Netlify 專案連接此 repo
-3. Build command: `npm run build`
-4. Publish directory: `.next`
-
-## AdSense 申請步驟
-
-1. 更新域名為你的自定義域名
-2. 在 AdSlot.jsx 內替換真實 AdSense 代碼
-3. 確保所有頁面內容完整
-4. 提交申請
-
-詳情請參閱 adsense_guide.md
+Built with care for people who want clarity on their debt repayment journey.
