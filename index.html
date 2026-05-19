@@ -1,177 +1,33 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DebtZero Pro | 香港最強債務清零計算器</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/main.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DebtZero Pro | 香港最強債務清零計算器</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/main.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-[#0a0f1a] text-slate-200">
-  <!-- Header -->
-  <header class="border-b border-white/10 bg-[#0a0f1a]">
-    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 bg-white rounded-2xl flex items-center justify-center">
-          <span class="text-[#0a0f1a] text-2xl font-bold">DZ</span>
-        </div>
-        <div>
-          <div class="font-semibold text-2xl tracking-tight">DebtZero Pro</div>
-          <div class="text-xs text-emerald-400 -mt-1">HONG KONG · 2026</div>
-        </div>
-      </div>
-      
-      <div class="flex items-center gap-4">
-        <div class="flex bg-[#111827] rounded-full p-1 text-sm">
-          <button onclick="switchLanguage('zh')" class="px-4 py-1.5 rounded-full bg-white text-black font-medium">ZH</button>
-          <button onclick="switchLanguage('en')" class="px-4 py-1.5 rounded-full text-white">EN</button>
-        </div>
-        <a href="#tool" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 rounded-2xl text-sm font-semibold transition">立即開始計算</a>
-      </div>
-    </div>
-  </header>
+<header class="border-b border-white/10 bg-[#0a0f1a]">
+<div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3"><div class="w-9 h-9 bg-white rounded-2xl flex items-center justify-center"><span class="text-[#0a0f1a] text-2xl font-bold">DZ</span></div><div><div class="font-semibold text-2xl tracking-tight">DebtZero Pro</div><div class="text-xs text-emerald-400 -mt-1">HONG KONG · 2026</div></div></div>
+<div class="flex items-center gap-4"><div class="flex bg-[#111827] rounded-full p-1 text-sm"><button onclick="switchLanguage('zh')" class="px-4 py-1.5 rounded-full bg-white text-black font-medium">ZH</button><button onclick="switchLanguage('en')" class="px-4 py-1.5 rounded-full text-white">EN</button></div><a href="#tool" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 rounded-2xl text-sm font-semibold transition">立即開始計算</a></div>
+</div>
+</header>
 
-  <!-- Hero -->
-  <section class="max-w-5xl mx-auto px-6 pt-14 pb-10">
-    <div class="max-w-3xl">
-      <div class="inline-flex items-center gap-2 px-4 py-1 bg-emerald-900/40 text-emerald-400 text-xs font-medium rounded-full mb-6">
-        香港 10,000+ 人正在使用 · 2026 最新
-      </div>
-      
-      <h1 class="text-6xl font-semibold tracking-tighter leading-none mb-4">
-        香港最強債務清零計算器<br>
-        <span class="text-emerald-400">清零債務</span>
-      </h1>
-      
-      <p class="text-2xl text-slate-300 mb-8">雪球法 vs 雪崩法 · 即時比較 · 省最多利息</p>
-      
-      <div class="flex items-center gap-4 mb-10">
-        <a href="#tool" class="px-9 py-4 bg-emerald-600 hover:bg-emerald-700 rounded-2xl font-semibold text-lg transition">立即開始計算</a>
-        <a href="about.html" class="px-8 py-4 border border-white/30 hover:bg-white/5 rounded-2xl font-medium transition">了解方法</a>
-      </div>
+<section class="max-w-5xl mx-auto px-6 pt-14 pb-10"><div class="max-w-3xl"><div class="inline-flex items-center gap-2 px-4 py-1 bg-emerald-900/40 text-emerald-400 text-xs font-medium rounded-full mb-6">香港 10,000+ 人正在使用 · 2026 最新</div><h1 class="text-6xl font-semibold tracking-tighter leading-none mb-4">香港最強債務清零計算器<br><span class="text-emerald-400">清零債務</span></h1><p class="text-2xl text-slate-300 mb-8">雪球法 vs 雪崩法 · 即時比較 · 省最多利息</p><div class="flex items-center gap-4 mb-10"><a href="#tool" class="px-9 py-4 bg-emerald-600 hover:bg-emerald-700 rounded-2xl font-semibold text-lg transition">立即開始計算</a><a href="about.html" class="px-8 py-4 border border-white/30 hover:bg-white/5 rounded-2xl font-medium transition">了解方法</a></div><div class="flex flex-wrap gap-x-8 gap-y-3 text-sm"><div><span class="font-semibold text-emerald-400">10,482</span> 位香港人已清零</div><div class="text-white/30">|</div><div>平均 <span class="font-semibold text-emerald-400">14.3 個月</span> 清零</div><div class="text-white/30">|</div><div>節省利息 <span class="font-semibold text-emerald-400">HK$38,700</span></div></div></div></section>
 
-      <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm">
-        <div><span class="font-semibold text-emerald-400">10,482</span> 位香港人已清零</div>
-        <div class="text-white/30">|</div>
-        <div>平均 <span class="font-semibold text-emerald-400">14.3 個月</span> 清零</div>
-        <div class="text-white/30">|</div>
-        <div>節省利息 <span class="font-semibold text-emerald-400">HK$38,700</span></div>
-      </div>
-    </div>
-  </section>
+<section id="tool" class="max-w-5xl mx-auto px-6 pb-16"><div class="tool-card rounded-3xl p-8 md:p-10"><div class="mb-8"><div class="text-emerald-400 text-sm font-semibold tracking-widest">YOUR DEBTS</div><h2 class="text-3xl font-semibold mt-1">輸入債務資料</h2></div>
+<form id="debt-form"><div id="debt-rows"><div class="debt-row grid grid-cols-12 gap-3 items-end mb-4"><div class="col-span-12 md:col-span-3"><label class="text-xs text-slate-400 block mb-1.5">DEBT NAME</label><input type="text" class="debt-name input w-full px-4 py-2.5 rounded-xl" value="信用卡 A"></div><div class="col-span-6 md:col-span-2"><label class="text-xs text-slate-400 block mb-1.5">BALANCE (HKD)</label><input type="number" class="debt-balance input w-full px-4 py-2.5 rounded-xl" value="45000"></div><div class="col-span-6 md:col-span-2"><label class="text-xs text-slate-400 block mb-1.5">INTEREST RATE (%)</label><input type="number" class="debt-rate input w-full px-4 py-2.5 rounded-xl" value="24"></div><div class="col-span-6 md:col-span-2"><label class="text-xs text-slate-400 block mb-1.5">MIN PAYMENT</label><input type="number" class="debt-min input w-full px-4 py-2.5 rounded-xl" value="900"></div><div class="col-span-6 md:col-span-3 flex items-end"><button type="button" class="remove-debt text-red-400 hover:text-red-500 px-3 py-2 text-sm">移除</button></div></div></div>
+<button type="button" id="add-debt" class="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 text-sm mb-8"><span class="text-xl leading-none">+</span> 新增債項</button>
+<div class="max-w-md mb-8"><label class="block text-sm text-slate-300 mb-2">每月額外還款 (HKD)</label><input type="range" id="extra-payment" min="0" max="15000" step="500" value="3000" class="w-full accent-emerald-500"><div class="text-right text-emerald-400 font-semibold text-2xl mt-1" id="extra-value">HK$3,000</div></div>
+<div class="flex flex-col md:flex-row gap-4"><button type="submit" class="btn-primary flex-1 px-8 py-4 rounded-2xl font-semibold text-lg">計算還款計劃</button><button type="button" id="save-plan" class="px-8 py-4 border border-emerald-600 text-emerald-400 hover:bg-emerald-950 rounded-2xl font-semibold">儲存當前計劃</button></div></form>
 
-  <!-- Tool -->
-  <section id="tool" class="max-w-5xl mx-auto px-6 pb-16">
-    <div class="tool-card rounded-3xl p-8 md:p-10">
-      <div class="mb-8">
-        <div class="text-emerald-400 text-sm font-semibold tracking-widest">YOUR DEBTS</div>
-        <h2 class="text-3xl font-semibold mt-1">輸入債務資料</h2>
-      </div>
+<div id="results-section" class="hidden mt-10 pt-10 border-t border-white/10"><h3 class="text-2xl font-semibold mb-6">還款結果比較</h3><div class="grid md:grid-cols-2 gap-6 mb-8"><div id="snowball-result" class="result-card rounded-3xl p-8"></div><div id="avalanche-result" class="result-card rounded-3xl p-8"></div></div>
+<div class="grid md:grid-cols-5 gap-6"><div class="md:col-span-3 tool-card rounded-3xl p-8"><div class="flex justify-between mb-4"><div><div class="font-semibold">債務餘額變化曲線</div><div class="text-sm text-slate-400">越低代表還款越快</div></div><button onclick="downloadPDF()" class="text-sm text-emerald-400 hover:text-emerald-300"> 下載 PDF</button></div><div class="h-80"><canvas id="balance-chart"></canvas></div></div><div class="md:col-span-2 tool-card rounded-3xl p-8"><div class="font-semibold mb-4">債務分佈</div><div class="h-80"><canvas id="debt-pie-chart"></canvas></div></div></div>
+<div class="mt-8 p-6 bg-[#0f172a] rounded-2xl border border-white/10"><div class="font-semibold mb-2">計算假設説明</div><div class="text-sm text-slate-400">此計算器假設每月固定還款，不考慮利率調整或新增開支。實際結果可能有差異。</div></div></div></div>
 
-      <form id="debt-form">
-        <div id="debt-rows">
-          <div class="debt-row grid grid-cols-12 gap-3 items-end mb-4">
-            <div class="col-span-12 md:col-span-3">
-              <label class="text-xs text-slate-400 block mb-1.5">DEBT NAME</label>
-              <input type="text" class="debt-name input w-full px-4 py-2.5 rounded-xl" value="信用卡 A">
-            </div>
-            <div class="col-span-6 md:col-span-2">
-              <label class="text-xs text-slate-400 block mb-1.5">BALANCE (HKD)</label>
-              <input type="number" class="debt-balance input w-full px-4 py-2.5 rounded-xl" value="45000">
-            </div>
-            <div class="col-span-6 md:col-span-2">
-              <label class="text-xs text-slate-400 block mb-1.5">INTEREST RATE (%)</label>
-              <input type="number" class="debt-rate input w-full px-4 py-2.5 rounded-xl" value="24">
-            </div>
-            <div class="col-span-6 md:col-span-2">
-              <label class="text-xs text-slate-400 block mb-1.5">MIN PAYMENT</label>
-              <input type="number" class="debt-min input w-full px-4 py-2.5 rounded-xl" value="900">
-            </div>
-            <div class="col-span-6 md:col-span-3 flex items-end">
-              <button type="button" class="remove-debt text-red-400 hover:text-red-500 px-3 py-2 text-sm">移除</button>
-            </div>
-          </div>
-        </div>
-
-        <button type="button" id="add-debt" class="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 text-sm mb-8">
-          <span class="text-xl leading-none">+</span> 新增債項
-        </button>
-
-        <div class="max-w-md mb-8">
-          <label class="block text-sm text-slate-300 mb-2">每月額外還款 (HKD)</label>
-          <input type="range" id="extra-payment" min="0" max="15000" step="500" value="3000" class="w-full accent-emerald-500">
-          <div class="text-right text-emerald-400 font-semibold text-2xl mt-1" id="extra-value">HK$3,000</div>
-        </div>
-
-        <button type="submit" class="btn-primary w-full md:w-auto px-14 py-4 rounded-2xl font-semibold text-lg flex items-center justify-center gap-3">
-          計算還款計劃 <span>→</span>
-        </button>
-      </form>
-
-      <!-- Results -->
-      <div id="results-section" class="hidden mt-10 pt-10 border-t border-white/10">
-        <h3 class="text-2xl font-semibold mb-6">還款結果比較</h3>
-        
-        <div class="grid md:grid-cols-2 gap-6 mb-8">
-          <div id="snowball-result" class="result-card rounded-3xl p-8"></div>
-          <div id="avalanche-result" class="result-card rounded-3xl p-8"></div>
-        </div>
-
-        <div class="tool-card rounded-3xl p-8">
-          <div class="flex justify-between items-center mb-4">
-            <div>
-              <div class="font-semibold">債務餘額變化曲線</div>
-              <div class="text-sm text-slate-400">越低代表還款越快</div>
-            </div>
-            <button onclick="downloadPDF()" class="flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300">
-              <span>下載 PDF 報告</span>
-            </button>
-          </div>
-          <div class="h-80">
-            <canvas id="balance-chart"></canvas>
-          </div>
-        </div>
-
-        <!-- Methodology / Trust -->
-        <div class="mt-8 p-6 bg-[#0f172a] rounded-2xl border border-white/10">
-          <div class="font-semibold mb-2">計算假設説明</div>
-          <div class="text-sm text-slate-400 leading-relaxed">
-            此計算器假設每月固定還款，不考慮利率調整、新增開支或收入變化。<br>
-            實際還款期間可能因此而有所差異。請以此作為參考，重要決策前請咩諮專業人士。
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-[#0a0f1a] border-t border-white/10 py-10">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-y-8 text-sm">
-      <div>
-        <div class="font-semibold mb-3">DebtZero Pro</div>
-        <div class="text-slate-400 text-xs">專為香港人設計的債務清零工具</div>
-      </div>
-      <div>
-        <div class="font-semibold mb-3">資源</div>
-        <div class="space-y-1.5">
-          <a href="about.html" class="block text-slate-400 hover:text-white transition">About</a>
-          <a href="disclaimer.html" class="block text-slate-400 hover:text-white transition">Disclaimer</a>
-        </div>
-      </div>
-      <div>
-        <div class="font-semibold mb-3">法律</div>
-        <div class="space-y-1.5">
-          <a href="privacy.html" class="block text-slate-400 hover:text-white transition">Privacy Policy</a>
-          <a href="terms.html" class="block text-slate-400 hover:text-white transition">Terms of Service</a>
-        </div>
-      </div>
-      <div class="text-slate-400 text-xs">
-        © 2026 DebtZero Pro. For educational use only.
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/app.js"></script>
+<footer class="bg-[#0a0f1a] border-t border-white/10 py-10"><div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-y-8 text-sm"><div><div class="font-semibold mb-3">DebtZero Pro</div><div class="text-slate-400 text-xs">專為香港人設計的債務清零工具</div></div><div class="space-y-1.5"><a href="about.html" class="block text-slate-400 hover:text-white transition">About</a><a href="disclaimer.html" class="block text-slate-400 hover:text-white transition">Disclaimer</a></div><div class="space-y-1.5"><a href="privacy.html" class="block text-slate-400 hover:text-white transition">Privacy Policy</a><a href="terms.html" class="block text-slate-400 hover:text-white transition">Terms</a></div><div class="text-slate-400 text-xs">© 2026 DebtZero Pro</div></div></footer>
+<script src="js/app.js"></script>
 </body>
 </html>
