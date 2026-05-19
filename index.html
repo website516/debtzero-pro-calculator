@@ -2,7 +2,7 @@
 <html lang="zh-HK">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DebtZero Pro | 香港最強債務清零計算器</title>
+<title>DebtZero Pro</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="css/main.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -28,41 +28,56 @@
 <div class="grid md:grid-cols-5 gap-6"><div class="md:col-span-3 tool-card rounded-3xl p-8"><div class="flex justify-between mb-4"><div><div class="font-semibold" data-zh="債務餘額變化曲線" data-en="Debt Balance Over Time"></div><div class="text-sm text-slate-400" data-zh="越低代表還款越快" data-en="Lower = faster payoff"></div></div><button onclick="downloadPDF()" class="text-sm text-emerald-400 hover:text-emerald-300" data-zh="下載 PDF" data-en="Download PDF"></button></div><div class="h-80"><canvas id="balance-chart"></canvas></div></div><div class="md:col-span-2 tool-card rounded-3xl p-8"><div class="font-semibold mb-4" data-zh="債務分佈" data-en="Debt Distribution"></div><div class="h-80"><canvas id="debt-pie-chart"></canvas></div></div></div>
 <div class="mt-8 p-6 bg-[#0f172a] rounded-2xl border border-white/10"><div class="font-semibold mb-2" data-zh="計算假設説明" data-en="Calculation Assumptions"></div><div class="text-sm text-slate-400" data-zh="此計算器假設每月固定還款，不考慮利率調整或新增開支。實際結果可能有差異。" data-en="This calculator assumes fixed monthly payments. Actual results may vary."></div></div></div></div>
 
-<!-- Financial Freedom Education Section -->
+<!-- Expanded Financial Freedom Education Section -->
 <section class="max-w-6xl mx-auto px-6 pb-20">
   <div class="text-center mb-12">
-    <div class="text-emerald-400 text-sm font-semibold tracking-widest mb-2" data-zh="起踊財務自由" data-en="START YOUR FINANCIAL JOURNEY"></div>
-    <h2 class="text-4xl font-semibold" data-zh="清零債務後，為你的財務自由打好基礎" data-en="Build Your Foundation for Financial Freedom"></h2>
-    <p class="mt-3 text-slate-400 max-w-2xl mx-auto" data-zh="債務清零不係結束，而係新生活的開始。以下是香港人常見的財務管理心得。" data-en="Clearing debt is not the end, but the beginning. Here are practical tips for Hong Kong people."></p>
+    <div class="text-emerald-400 text-sm font-semibold tracking-widest mb-2" data-zh="起踊財務自由" data-en="BUILD YOUR FINANCIAL FUTURE"></div>
+    <h2 class="text-4xl font-semibold mb-3" data-zh="清零債務後，為財務自由打好基礎" data-en="After Clearing Debt, Build Your Foundation for Financial Freedom"></h2>
+    <p class="text-slate-400 max-w-2xl mx-auto" data-zh="債務清零不係結束，而係新生活的開始。以下是香港人實用的財務管理心得。" data-en="Clearing debt is not the end — it's the beginning. Here are practical tips tailored for Hong Kong people."></p>
   </div>
 
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
     <!-- Card 1 -->
     <div class="tool-card rounded-3xl p-8 border border-white/10">
-      <div class="text-emerald-400 text-sm font-semibold mb-3" data-zh="第一步" data-en="STEP 1"></div>
-      <h3 class="text-xl font-semibold mb-3" data-zh="建立紧急基金" data-en="Build an Emergency Fund"></h3>
-      <p class="text-slate-400 text-sm leading-relaxed" data-zh="建議先留 3-6 個月生活開支作為紧急基金，避免因意外事件再次負債。" data-en="Aim to save 3-6 months of living expenses first. This prevents you from falling back into debt due to unexpected events."></p>
+      <div class="text-emerald-400 text-sm font-semibold mb-3" data-zh="基礎" data-en="FOUNDATION"></div>
+      <h3 class="text-xl font-semibold mb-3" data-zh="建立 3-6 個月紧急基金" data-en="Build 3-6 Months Emergency Fund"></h3>
+      <p class="text-slate-400 text-sm leading-relaxed" data-zh="清零債務後，最重要的事情就係先留足紧急基金，防止因意外事件再次回到負債。" data-en="After clearing debt, prioritize building an emergency fund covering 3-6 months of expenses to avoid falling back into debt."></p>
     </div>
 
     <!-- Card 2 -->
     <div class="tool-card rounded-3xl p-8 border border-white/10">
-      <div class="text-emerald-400 text-sm font-semibold mb-3" data-zh="心態調整" data-en="MINDSET"></div>
-      <h3 class="text-xl font-semibold mb-3" data-zh="不要再用債務解決問題" data-en="Stop Solving Problems with Debt"></h3>
-      <p class="text-slate-400 text-sm leading-relaxed" data-zh="清零債務後，小心避免再用信用卡或貸款來解決現金流問題。這是多數人回到原點的原因。" data-en="After clearing debt, avoid using credit cards or loans to solve cash flow problems. This is how most people fall back into the debt cycle."></p>
+      <div class="text-emerald-400 text-sm font-semibold mb-3" data-zh="心態" data-en="MINDSET"></div>
+      <h3 class="text-xl font-semibold mb-3" data-zh="避免生活方式膨脆" data-en="Avoid Lifestyle Inflation"></h3>
+      <p class="text-slate-400 text-sm leading-relaxed" data-zh="清零債務後，小心不要因為收入增加而增加開支。繼續保持簡單的生活樣式是長遠財務自由的關鍵。" data-en="After becoming debt-free, resist the urge to increase spending as income rises. Maintaining a simple lifestyle is key to long-term financial freedom."></p>
     </div>
 
     <!-- Card 3 -->
     <div class="tool-card rounded-3xl p-8 border border-white/10">
-      <div class="text-emerald-400 text-sm font-semibold mb-3" data-zh="長遠觀點" data-en="LONG TERM"></div>
-      <h3 class="text-xl font-semibold mb-3" data-zh="開始建立被動收入" data-en="Start Building Passive Income"></h3>
-      <p class="text-slate-400 text-sm leading-relaxed" data-zh="可以從小額投資、院企、或自己的技能開始。目標係讓錢為你工作，而不是你為錢工作。" data-en="Start small with investments, dividend stocks, or monetizing your skills. The goal is to make money work for you."></p>
+      <div class="text-emerald-400 text-sm font-semibold mb-3" data-zh="投資" data-en="INVESTING"></div>
+      <h3 class="text-xl font-semibold mb-3" data-zh="從小額投資開始" data-en="Start Small with Investing"></h3>
+      <p class="text-slate-400 text-sm leading-relaxed" data-zh="可以從每月定投指數基金開始，利用复利效應讓資產随時間增長。不要等到有大筆錢先開始。" data-en="Start investing small every month through index funds. Use the power of compounding instead of waiting for a large sum."></p>
     </div>
-  </div>
 
-  <div class="mt-8 text-center">
-    <a href="about.html" class="inline-flex items-center text-emerald-400 hover:text-emerald-300 text-sm">
-      <span data-zh="了解更多財務管理心得" data-en="Learn more about wealth management"></span> →
-    </a>
+    <!-- Card 4 -->
+    <div class="tool-card rounded-3xl p-8 border border-white/10">
+      <div class="text-emerald-400 text-sm font-semibold mb-3" data-zh="收入" data-en="INCOME"></div>
+      <h3 class="text-xl font-semibold mb-3" data-zh="建立多元收入來源" data-en="Build Multiple Income Streams"></h3>
+      <p class="text-slate-400 text-sm leading-relaxed" data-zh="除了主職，可以考慮副業、租資、投資收入等。多元收入能大大降低風險。" data-en="Besides your main job, consider side hustles, rental income, or investment returns. Multiple income streams greatly reduce financial risk."></p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="tool-card rounded-3xl p-8 border border-white/10">
+      <div class="text-emerald-400 text-sm font-semibold mb-3" data-zh="習慫" data-en="HABITS"></div>
+      <h3 class="text-xl font-semibold mb-3" data-zh="養成記帳同每月審查" data-en="Track Spending & Review Monthly"></h3>
+      <p class="text-slate-400 text-sm leading-relaxed" data-zh="每月定時審查開支同投資結果，可以幫到你持續改善財務狀況。" data-en="Review your spending and investment results every month. This habit helps you continuously improve your financial situation."></p>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="tool-card rounded-3xl p-8 border border-white/10">
+      <div class="text-emerald-400 text-sm font-semibold mb-3" data-zh="長期" data-en="LONG-TERM"></div>
+      <h3 class="text-xl font-semibold mb-3" data-zh="設定財務自由目標" data-en="Set Clear Financial Freedom Goals"></h3>
+      <p class="text-slate-400 text-sm leading-relaxed" data-zh="明確自己想達到的財務自由目標（例如幾歲退休、每月被動收入達到幾多），會讓你的行動更有方向。" data-en="Define what financial freedom means to you (e.g. retirement age or passive income target). Clear goals make your actions more focused."></p>
+    </div>
   </div>
 </section>
 
