@@ -117,9 +117,7 @@ function displayResults(snowball, avalanche, snowballEl, avalancheEl) {
 function drawLineChart(snowballHistory, avalancheHistory, canvas) {
   if (chartInstance) chartInstance.destroy();
   chartInstance = new Chart(canvas.getContext('2d'), {
-    type: 'line',
-    data: { labels: snowballHistory.map(h => h.month), datasets: [{ label: '雪球法', data: snowballHistory.map(h => h.totalBalance), borderColor: '#10b981', borderWidth: 3 }, { label: '雪崩法', data: avalancheHistory.map(h => h.totalBalance), borderColor: '#3b82f6', borderWidth: 3, borderDash: [5,3] }] },
-    options: { responsive: true, maintainAspectRatio: false }
+    type: 'line', data: { labels: snowballHistory.map(h => h.month), datasets: [{ label: '雪球法', data: snowballHistory.map(h => h.totalBalance), borderColor: '#10b981', borderWidth: 3 }, { label: '雪崩法', data: avalancheHistory.map(h => h.totalBalance), borderColor: '#3b82f6', borderWidth: 3, borderDash: [5,3] }] }, options: { responsive: true, maintainAspectRatio: false }
   });
 }
 
@@ -127,9 +125,7 @@ function drawPieChart(debts, canvas) {
   if (pieChartInstance) pieChartInstance.destroy();
   const colors = ['#10b981','#3b82f6','#8b5cf6','#f59e0b','#ef4444'];
   pieChartInstance = new Chart(canvas.getContext('2d'), {
-    type: 'pie',
-    data: { labels: debts.map(d => d.name), datasets: [{ data: debts.map(d => d.balance), backgroundColor: colors }] },
-    options: { responsive: true, plugins: { legend: { position: 'right' } } }
+    type: 'pie', data: { labels: debts.map(d => d.name), datasets: [{ data: debts.map(d => d.balance), backgroundColor: colors }] }, options: { responsive: true, plugins: { legend: { position: 'right' } } }
   });
 }
 
@@ -158,6 +154,20 @@ function loadSavedPlan() {
     document.getElementById('extra-payment').value = data.extra;
     document.getElementById('extra-value').textContent = 'HK$' + parseInt(data.extra).toLocaleString();
   }
+}
+
+function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  doc.setFontSize(18);
+  doc.text('DebtZero Pro - 債務清零報告', 20, 20);
+
+  doc.setFontSize(12);
+  doc.text('此報告由 DebtZero Pro 自動生成', 20, 30);
+
+  // TODO: Can expand to include actual results later
+  doc.save('debt-payoff-report.pdf');
 }
 
 function switchLanguage(lang) {
