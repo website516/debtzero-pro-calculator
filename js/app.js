@@ -4,8 +4,17 @@ function initCalculator() {
   const snowballEl = document.getElementById('snowball-result');
   const avalancheEl = document.getElementById('avalanche-result');
   const chartCanvas = document.getElementById('balance-chart');
+  const extraSlider = document.getElementById('extra-payment');
+  const extraValue = document.getElementById('extra-value');
 
   let chartInstance = null;
+
+  // Live update extra payment value
+  if (extraSlider && extraValue) {
+    extraSlider.addEventListener('input', () => {
+      extraValue.textContent = 'HK$' + parseInt(extraSlider.value).toLocaleString();
+    });
+  }
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -16,7 +25,7 @@ function initCalculator() {
       return;
     }
 
-    const extraPayment = parseFloat(document.getElementById('extra-payment').value) || 0;
+    const extraPayment = parseFloat(extraSlider.value) || 0;
 
     const snowball = calculatePayoff(debts, extraPayment, 'snowball');
     const avalanche = calculatePayoff(debts, extraPayment, 'avalanche');
@@ -67,7 +76,7 @@ function addDebtRow() {
       <input type="number" class="debt-min input w-full px-4 py-2.5 rounded-xl text-sm" placeholder="最低還款" value="600">
     </div>
     <div class="col-span-6 md:col-span-3">
-      <button type="button" class="remove-debt text-red-400 hover:text-red-500 text-sm px-3 py-2">移除</button>
+      <button type="button" class="remove-debt text-red-400 hover:text-red-500 px-3 py-2 text-sm">移除</button>
     </div>
   `;
   
@@ -180,6 +189,15 @@ function drawChart(snowballHistory, avalancheHistory, canvas, chartInstance) {
       }
     }
   });
+}
+
+// Language switch
+function switchLanguage(lang) {
+  if (lang === 'en') {
+    alert('English version coming soon! Currently the tool is optimized in Chinese.');
+  } else {
+    location.reload();
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function() {

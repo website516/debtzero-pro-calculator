@@ -9,6 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-[#0a0f1a] text-slate-200">
+  <!-- Header -->
   <header class="border-b border-white/10 bg-[#0a0f1a]">
     <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
       <div class="flex items-center gap-3">
@@ -31,6 +32,7 @@
     </div>
   </header>
 
+  <!-- Hero -->
   <section class="max-w-5xl mx-auto px-6 pt-14 pb-10">
     <div class="max-w-3xl">
       <div class="inline-flex items-center gap-2 px-4 py-1 bg-emerald-900/40 text-emerald-400 text-xs font-medium rounded-full mb-6">
@@ -59,6 +61,7 @@
     </div>
   </section>
 
+  <!-- Tool -->
   <section id="tool" class="max-w-5xl mx-auto px-6 pb-16">
     <div class="tool-card rounded-3xl p-8 md:p-10">
       <div class="mb-8">
@@ -106,6 +109,7 @@
         </button>
       </form>
 
+      <!-- Results -->
       <div id="results-section" class="hidden mt-10 pt-10 border-t border-white/10">
         <h3 class="text-2xl font-semibold mb-6">還款結果比較</h3>
         
@@ -129,12 +133,44 @@
           </div>
         </div>
 
-        <div class="mt-6 text-xs text-slate-400">
-          * 計算假設每月固定還款，實際結果會因利率調整、額外開支或收入變化而有所不同。
+        <!-- Methodology / Trust -->
+        <div class="mt-8 p-6 bg-[#0f172a] rounded-2xl border border-white/10">
+          <div class="font-semibold mb-2">計算假設説明</div>
+          <div class="text-sm text-slate-400 leading-relaxed">
+            此計算器假設每月固定還款，不考慮利率調整、新增開支或收入變化。<br>
+            實際還款期間可能因此而有所差異。請以此作為參考，重要決策前請咩諮專業人士。
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0a0f1a] border-t border-white/10 py-10">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-y-8 text-sm">
+      <div>
+        <div class="font-semibold mb-3">DebtZero Pro</div>
+        <div class="text-slate-400 text-xs">專為香港人設計的債務清零工具</div>
+      </div>
+      <div>
+        <div class="font-semibold mb-3">資源</div>
+        <div class="space-y-1.5">
+          <a href="about.html" class="block text-slate-400 hover:text-white transition">About</a>
+          <a href="disclaimer.html" class="block text-slate-400 hover:text-white transition">Disclaimer</a>
+        </div>
+      </div>
+      <div>
+        <div class="font-semibold mb-3">法律</div>
+        <div class="space-y-1.5">
+          <a href="privacy.html" class="block text-slate-400 hover:text-white transition">Privacy Policy</a>
+          <a href="terms.html" class="block text-slate-400 hover:text-white transition">Terms of Service</a>
+        </div>
+      </div>
+      <div class="text-slate-400 text-xs">
+        © 2026 DebtZero Pro. For educational use only.
+      </div>
+    </div>
+  </footer>
 
   <script src="js/app.js"></script>
 </body>
