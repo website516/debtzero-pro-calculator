@@ -1,44 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-HK">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Service | DebtZero Pro</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>服務條款 | DebtZero Pro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="bg-[#0a0f1a] text-slate-200">
-<header class="border-b border-white/10 bg-[#0a0f1a]">
-<div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-<div class="flex items-center gap-3"><div class="w-9 h-9 bg-white rounded-2xl flex items-center justify-center"><span class="text-[#0a0f1a] text-2xl font-bold">DZ</span></div><div><div class="font-semibold text-2xl tracking-tight">DebtZero Pro</div><div class="text-xs text-emerald-400 -mt-1">HONG KONG · 2026</div></div></div>
-<div class="flex items-center gap-4"><div class="flex bg-[#111827] rounded-full p-1 text-sm"><button class="lang-btn px-4 py-1.5 rounded-full" data-lang="zh">ZH</button><button class="lang-btn px-4 py-1.5 rounded-full" data-lang="en">EN</button></div><a href="index.html" class="px-6 py-2.5 border border-white/30 hover:bg-white/5 rounded-2xl text-sm font-medium transition" data-zh="返回主頁" data-en="Back to Home"></a></div>
-</div>
-</header>
-
-<div class="max-w-4xl mx-auto px-6 py-16 prose prose-invert">
-<h1 data-zh="服務條款" data-en="Terms of Service"></h1>
-<p class="text-sm text-slate-400" data-zh="最後更新：2026年5月" data-en="Last updated: May 2026"></p>
-
-<h2 data-zh="1. 工具的使用" data-en="1. Use of the Tool"></h2>
-<p data-zh="DebtZero Pro 僅供教育及個人財務規劃使用。它不是財務咩諮，也不應被視為投資建議。" data-en="DebtZero Pro is provided for educational and personal financial planning purposes only. It is not financial advice and should not be treated as investment recommendations."></p>
-
-<h2 data-zh="2. 結果的性質" data-en="2. Nature of Results"></h2>
-<p data-zh="所有計算結果只是基於你所提供資料的估計。實際結果可能因利率調整、新增開支、或付款行為而有所不同。" data-en="All calculation results are estimates based on the information you provide. Actual results may differ due to interest rate changes, new expenses, or payment behavior."></p>
-
-<h2 data-zh="3. 責任限制" data-en="3. Limitation of Liability"></h2>
-<p data-zh="我們不對使用者根據本工具作出的任何財務決策負責。請在作出重要決策前咩諮合資格的財務咩諮或專業人士。" data-en="We are not responsible for any financial decisions made based on the output of this tool. Please consult a qualified financial advisor before making important financial decisions."></p>
-
-<h2 data-zh="4. 知識產權" data-en="4. Intellectual Property"></h2>
-<p data-zh="本網站的設計、文字及代碼的知識產權屬於 DebtZero Pro。未經授權不得複製或傳播。" data-en="The design, text, and code of this website belong to DebtZero Pro. You may not reproduce or distribute them without permission."></p>
-</div>
-
-<footer class="bg-[#0a0f1a] border-t border-white/10 py-10 mt-12">
-<div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-y-8 text-sm">
-<div><div class="font-semibold mb-3">DebtZero Pro</div><div class="text-slate-400 text-xs" data-zh="專為香港人設計的債務清零工具" data-en="Debt payoff tool designed for Hong Kong"></div></div>
-<div class="space-y-1.5"><a href="index.html" class="block text-slate-400 hover:text-white transition" data-zh="返回主頁" data-en="Back to Home"></a><a href="disclaimer.html" class="block text-slate-400 hover:text-white transition" data-zh="免責聲明" data-en="Disclaimer"></a></div>
-<div class="space-y-1.5"><a href="privacy.html" class="block text-slate-400 hover:text-white transition" data-zh="隱私政策" data-en="Privacy Policy"></a><a href="terms.html" class="block text-slate-400 hover:text-white transition" data-zh="服務條款" data-en="Terms of Service"></a></div>
-<div class="text-slate-400 text-xs">© 2026 DebtZero Pro</div>
-</div>
-</footer>
-<script src="js/app.js"></script>
+  <header class="border-b border-white/10 bg-[#0a0f1a]">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-white rounded-2xl flex items-center justify-center">
+          <span class="text-[#0a0f1a] text-2xl font-bold">DZ</span>
+        </div>
+        <div>
+          <div class="font-semibold text-2xl tracking-tight">DebtZero Pro</div>
+          <div class="text-xs text-emerald-400 -mt-1">HONG KONG · 2026</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex bg-[#111827] rounded-full p-1 text-sm">
+          <button onclick="switchLanguage('zh')" class="px-4 py-1.5 rounded-full bg-white text-black font-medium">ZH</button>
+          <button onclick="switchLanguage('en')" class="px-4 py-1.5 rounded-full text-white">EN</button>
+        </div>
+        <a href="index.html" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 rounded-2xl text-sm font-semibold transition">返回主頁</a>
+      </div>
+    </div>
+  </header>
+  <div class="max-w-4xl mx-auto px-6 py-16">
+    <h1 class="text-5xl font-semibold mb-8" data-zh="服務條款" data-en="Terms of Service">服務條款</h1>
+    <div class="prose prose-invert max-w-none text-slate-300">
+      <p data-zh="使用 DebtZero Pro 即表示你同意以下條款。本網站提供嘅計算器只供參考用途，唔構成財務建議。" data-en="By using DebtZero Pro, you agree to the following terms. The calculator is for reference only and does not constitute financial advice.">使用 DebtZero Pro 即表示你同意以下條款。本網站提供嘅計算器只供參考用途，唔構成財務建議。</p>
+      <h2 data-zh="免責聲明" data-en="Disclaimer">免責聲明</h2>
+      <p data-zh="所有計算結果基於你提供嘅資料。實際還款情況可能因利率變動、收入變化等因素而不同。DebtZero Pro 唔對任何計算結果負責。" data-en="All calculations are based on the data you provide. Actual repayment may vary due to interest rate changes, income changes, etc. DebtZero Pro is not responsible for any calculation results.">所有計算結果基於你提供嘅資料。實際還款情況可能因利率變動、收入變化等因素而不同。DebtZero Pro 唔對任何計算結果負責。</p>
+      <p class="text-sm text-slate-400 mt-12">最後更新：2026 年 5 月</p>
+    </div>
+  </div>
+  <footer class="border-t border-white/10 bg-[#0a0f1a] py-8">
+    <div class="max-w-6xl mx-auto px-6 text-sm text-slate-400 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>DebtZero Pro — 專為香港人設計嘅債務清零工具</div>
+      <div class="flex gap-6">
+        <a href="about.html" class="hover:text-white">About</a>
+        <a href="privacy.html" class="hover:text-white">Privacy</a>
+        <a href="terms.html" class="hover:text-white">Terms</a>
+        <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+        <a href="contact.html" class="hover:text-white">Contact</a>
+      </div>
+      <div>© 2026 DebtZero Pro</div>
+    </div>
+  </footer>
+  <script>
+    function switchLanguage(lang) {
+      localStorage.setItem('language', lang);
+      document.querySelectorAll('[data-zh]').forEach(el => {
+        if (lang === 'zh') el.textContent = el.getAttribute('data-zh');
+        else el.textContent = el.getAttribute('data-en');
+      });
+    }
+    if (localStorage.getItem('language') === 'en') switchLanguage('en');
+  </script>
 </body>
 </html>
