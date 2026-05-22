@@ -1,31 +1,6 @@
-# Static Website .gitignore
-
-# Dependencies
+# Pure static Tailwind CDN website
 /node_modules
-
-# Production builds
-/build
-/dist
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# OS
+.next
+out
 .DS_Store
-Thumbs.db
-
-# IDE
-.idea
-.vscode/
-*.swp
-*.swo
-
-# Temporary files
-*.tmp
+*.log
